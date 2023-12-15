@@ -69,7 +69,5 @@ jobs:
           path: dist/
       - name: Publish package distributions to TestPyPI
         # Only upload on tags
-        if: startsWith(github.ref, 'refs/tags/v')
+        # if: startsWith(github.ref, 'refs/tags/v') # temp to test publish
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          repository-url: https://test.pypi.org/legacy/
