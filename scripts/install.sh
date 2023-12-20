@@ -61,17 +61,7 @@ then
 fi
 echo "JRE installation complete."
 
-if [ "$ARCH" == "aarch64" ]
-then
-    if package_is_installed libopencv-core4.5
-    then
-        echo "libopencv-core4.5 already installed"
-    else
-        # libphotonlibcamera.so on raspberry pi has dep on libopencv_core
-        echo "Installing libopencv-core4.5 on aarch64"
-        apt-get install --yes libopencv-core4.5
-    fi
-fi
+# We used to install libopencv4.5 here for libphotonlibcamera, but this should be part of the Pi image we ship. Delete here so we can drop support for manual Pi install, and also support non-Pi aarch64 coprocs
 
 echo "Downloading latest stable release of PhotonVision..."
 mkdir -p /opt/photonvision
