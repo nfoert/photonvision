@@ -18,6 +18,11 @@ on:
       - '.github/**'
   merge_group:
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to build'
+        default: 'backports/v2024.3.1'
+        required: true
 
 jobs:
   build-client:
